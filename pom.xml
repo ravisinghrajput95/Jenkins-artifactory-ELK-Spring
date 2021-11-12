@@ -20,16 +20,16 @@
 	</properties>
 
 	<distributionManagement>
-		<repository>
-			<id>release</id>
-			<name>releases</name>
-			<url>http://34.125.7.227:8081/artifactory/sample-libs-release</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshot</id>
-			<name>snapshots</name>
-			<url>http://34.125.7.227:8081/artifactory/sample-libs-snapshot</url>
-		</snapshotRepository>
+		    <repository>
+        <id>central</id>
+        <name>jf-releases</name>
+        <url>http://34.125.7.227:8081/artifactory/sample-libs-release</url>
+    </repository>
+		    <snapshotRepository>
+        <id>snapshots</id>
+        <name>jf-snapshots</name>
+        <url>http://34.125.7.227:8081/artifactory/sample-libs-snapshot</url>
+    </snapshotRepository>
 	</distributionManagement>
 
 	<scm>
