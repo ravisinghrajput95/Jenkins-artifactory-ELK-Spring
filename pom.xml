@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -7,7 +8,8 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.6</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath />
+		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>simple</artifactId>
@@ -18,27 +20,24 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-
 	<distributionManagement>
-		    <repository>
-        <id>central</id>
-        <name>jf-releases</name>
-        <url>http://34.125.67.254:8081/artifactory/sample-libs-release</url>
-    </repository>
-		    <snapshotRepository>
-        <id>snapshots</id>
-        <name>jf-snapshots</name>
-        <url>http://34.125.67.254:8081/artifactory/sample-libs-snapshot</url>
-    </snapshotRepository>
+		<repository>
+			<id>central</id>
+			<name>jf-releases</name>
+			<url>http://34.125.67.254:8081/artifactory/sample-libs-release</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>jf-snapshots</name>
+			<url>http://34.125.67.254:8081/artifactory/sample-libs-snapshot</url>
+		</snapshotRepository>
 	</distributionManagement>
-
 	<scm>
 		<connection>scm:git:git@github.com:ravisinghrajput95/Jenkins-artifactory-ELK-Spring.git</connection>
 		<developerConnection>scm:git:git@github.com:ravisinghrajput95/Jenkins-artifactory-ELK-Spring.git</developerConnection>
 		<url>git@github.com:ravisinghrajput95/Jenkins-artifactory-ELK-Spring.git</url>
 		<tag>v1.6.1</tag>
 	</scm>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -48,7 +47,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -60,7 +58,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>junit</groupId>     <!-- NOT org.junit here -->
+			<groupId>junit</groupId>
+			<!-- NOT org.junit here -->
 			<artifactId>junit-dep</artifactId>
 			<version>4.8.2</version>
 			<scope>test</scope>
@@ -71,8 +70,6 @@
 			<optional>true</optional>
 		</dependency>
 	</dependencies>
-
-
 	<build>
 		<plugins>
 			<plugin>
@@ -90,5 +87,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
