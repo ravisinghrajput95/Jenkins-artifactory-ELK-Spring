@@ -24,12 +24,12 @@
 		<repository>
 			<id>central</id>
 			<name>jf-releases</name>
-			<url>http://34.125.67.254:8081/artifactory/sample-libs-release</url>
+			<url>http://34.125.113.160:8081/artifactory/sample-libs-release</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>jf-snapshots</name>
-			<url>http://34.125.67.254:8081/artifactory/sample-libs-snapshot</url>
+			<url>http://34.125.113.160:8081/artifactory/sample-libs-snapshot</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<scm>
