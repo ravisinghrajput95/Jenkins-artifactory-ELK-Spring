@@ -15,9 +15,11 @@
         name: docker
         state: started
         enabled: yes
+        
     - name: Install docker-py python module and start the container
       shell: pip install docker-py
-      ignore_errors: yes
+      
+    - name: start the container
       docker_container:
         name: raviapp
         image: "rajputmarch2020/java_app:{{DOCKER_TAG}}"
