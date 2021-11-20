@@ -2,14 +2,14 @@
 - hosts: Prod
   become: True
   tasks:
-    - name: Create a k8s namespace
-      community.kubernetes.k8s:
-        state: present
-        definition:
-          api_version: v1
-          kind: Namespace
-          metadata:
-            name: Prod
+  - name: Create a k8s namespace
+    community.kubernetes.k8s:
+    state: present
+    definition:
+      api_version: v1
+      kind: Namespace
+      metadata:
+      name: Prod
         
      
     - name: Create a Service object
