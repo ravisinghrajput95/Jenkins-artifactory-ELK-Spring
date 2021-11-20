@@ -2,21 +2,21 @@
 - hosts: Prod
   become: True
   tasks:
-   - name: Create a k8s namespace
-     community.kubernetes.k8s:
-       state: present
-       definition:
-       src: namespace.yaml
+    - name: Create a k8s namespace
+      community.kubernetes.k8s:
+        state: present
+        definition:
+        src: namespace.yaml
         
      
-   - name: Create a Service object
-     community.kubernetes.k8s:
-       state: present
-       definition:
-       src: Service.yaml
-    
-   - name: Create a Deployment object
-     community.kubernetes.k8s:
-       state: present
-       definition:
-       src: deployment.yaml
+    - name: Create a Service object
+      community.kubernetes.k8s:
+        state: present
+        definition:
+        src: Service.yaml
+     
+    - name: Create a Deployment object
+      community.kubernetes.k8s:
+        state: present
+        definition:
+        src: deployment.yaml
