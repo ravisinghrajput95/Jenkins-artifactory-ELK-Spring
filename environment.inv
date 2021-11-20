@@ -1,2 +1,5 @@
 [QA]
 10.182.0.7 ansible_user=root ansible_python_interpreter=/usr/bin/python3
+
+[Prod]
+10.182.0.8 ansible_user=root ansible_python_interpreter=/usr/bin/python3
