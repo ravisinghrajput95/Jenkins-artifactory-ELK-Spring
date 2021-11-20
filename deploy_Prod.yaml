@@ -2,58 +2,58 @@
 - hosts: Prod
   become: True
   tasks:
-  - name: Create a k8s namespace
-    community.kubernetes.k8s:
-     state: present
-     definition:
-      apiVersion: v1
-      kind: Namespace
-      metadata:
-      name: Prod
+   - name: Create a k8s namespace
+     community.kubernetes.k8s:
+       state: present
+       definition:
+         apiVersion: v1
+         kind: Namespace
+         metadata:
+           name: Prod
         
      
-  - name: Create a Service object
-    community.kubernetes.k8s:
-     state: present
-     definition:
-      apiVersion: v1
-      kind: Service
-      metadata:
-        name: simple-app-service
-        namespace: Prod
-        labels:
-          app: simple-app
-      spec:
-        selector:
-          app: simple-app
-        type: NodePort
-        ports:
-        - nodePort: 31000
-          port: 8080
-          targetPort: 8080
+   - name: Create a Service object
+     community.kubernetes.k8s:
+       state: present
+       definition:
+         apiVersion: v1
+         kind: Service
+         metadata:
+           name: simple-app-service
+           namespace: Prod
+           labels:
+             app: simple-app
+         spec:
+           selector:
+             app: simple-app
+           type: NodePort
+           ports:
+           - nodePort: 31000
+             port: 8080
+             targetPort: 8080
     
-  - name: Create a Deployment object
-    community.kubernetes.k8s:
-     state: present
-     definition:
-      apiVersion: apps/v1
-      kind: Deployment
-      metadata:
-        name: simple-deploy
-        labels:
-          app: simple-app
-      spec:
-        replicas: 3
-        selector:
-          matchLabels:
-            app: simple-app
-        template:
-          metadata:
-            labels:
-              app: simple-app
-        spec:
-          containers:
-          - name: simple-app-container
-            image: rajputmarch2020/java_app:{{DOCKER_TAG}}
-            ports:
-            - containerPort: 8080
+   - name: Create a Deployment object
+     community.kubernetes.k8s:
+       state: present
+       definition:
+         apiVersion: apps/v1
+         kind: Deployment
+         metadata:
+           name: simple-deploy
+           labels:
+             app: simple-app
+         spec:
+           replicas: 3
+           selector:
+             matchLabels:
+               app: simple-app
+           template:
+             metadata:
+               labels:
+                 app: simple-app
+           spec:
+             containers:
+             - name: simple-app-container
+               image: rajputmarch2020/java_app:{{DOCKER_TAG}}
+               ports:
+               - containerPort: 8080
