@@ -1,7 +1,10 @@
 ---
 - hosts: Prod
   become: True
+  collections:
+    - community.kubernetes
   tasks:
+  
     - name: Create a k8s namespace
       community.kubernetes.k8s:
         state: present
