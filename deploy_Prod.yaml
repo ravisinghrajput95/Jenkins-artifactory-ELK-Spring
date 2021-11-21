@@ -17,7 +17,23 @@
       k8s:
         state: present
         definition:
-        src: Service.yaml
+          apiVersion: v1
+          kind: Service
+          metadata:
+            name: simple-app-service
+            namespace: default
+            labels:
+              app: simple-app
+          spec:
+            selector:
+              app: simple-app
+            type: NodePort
+            ports:
+            - nodePort: 31000
+              port: 8080
+              targetPort: 8080
+      
+          
      
     - name: Create a Deployment object
       k8s:
