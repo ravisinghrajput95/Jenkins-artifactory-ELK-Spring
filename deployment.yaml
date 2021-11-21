@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simple-app-container
-        image: rajputmarch2020/java_app:latest
+        image: rajputmarch2020/java_app
         ports:
         - containerPort: 8080
       
