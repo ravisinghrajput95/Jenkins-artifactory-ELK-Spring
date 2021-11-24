@@ -55,7 +55,7 @@
               spec:
                 containers:
                 - name: simple-app-container
-                  image: rajputmarch2020/java_app:tagVersion
+                  image: "rajputmarch2020/java_app:{{DOCKER_TAG}}"
                   ports:
                   - containerPort: 8080
         
